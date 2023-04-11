@@ -1,27 +1,15 @@
-//Prime Factorization Program to store all the Prime Factors of a number n into an array
-// and finally display the output
+//Program to show Sum of three Integer adds to ZERO
+let a=[-1,-2,1,2,-3];
+let b=5;
 
-
-
-let arrayOfPrimeFactors = [];
-let number = 34;
-
-for (i = 2; i <= number; i++) {
-    let a = number % i;
-    if (a == 0) {
-        isPrime = 1;
-        for (j = 2; j <= i / 2; j++) {
-            let b = i % j;
-            if (b == 0) {
-                isPrime = 0;
-                break;
+for (i = 0; i < a.length; i++) {
+    for (j = i + 1; j < a.length; j++) {
+        for (l = j + 1; l < a.length; l++) {
+            if (a[i] + a[j] + a[l] == 0) {
+                console.log("Found 3 elements whose sum is = 0");
+               console.log("Elements are " + a[i] + " " + a[j] + " " + a[l]);
+                return;
             }
         }
-        if (isPrime == 1) {
-            arrayOfPrimeFactors.push(i);
-        }
     }
-}
-if (isPrime == 0 || isPrime == 1) {
-    console.log(arrayOfPrimeFactors);
 }
